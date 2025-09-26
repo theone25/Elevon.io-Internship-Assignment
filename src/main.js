@@ -27,6 +27,7 @@ const crawler = new PuppeteerCrawler({
     maxConcurrency: input?.maxConcurrency,
     minConcurrency: input?.minConcurrency,
     maxRequestsPerMinute: input?.maxRequestsPerMinute,
+    respectRobotsTxtFile: true,
     launchContext: {
         launchOptions: {
             headless: true,

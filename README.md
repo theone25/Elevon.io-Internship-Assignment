@@ -87,6 +87,15 @@ For my use case, I went with a minimum concurrency of 3 and a maximum of 10 as t
 #### Retrying
 In a similar fashion, Retrying can be setup by using `maxRequestRetries`.
 
+#### Handling Robots.txt file
+We have made use of Crawlee Puppeteer option of `respectRobotsTxtFile`. when set to true, the crawler will automatically try to fetch the robots.txt file for each domain, and skip those that are not allowed.
+    Example:
+        ```json
+        {
+            "respectRobotsTxtFile": true
+        }
+        ```
+
 ### Handling Data
 
 #### De-Duping
