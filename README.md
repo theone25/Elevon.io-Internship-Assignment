@@ -111,5 +111,16 @@ To manage Rate-limit, we can use either Crawlee `createProxyConfiguration()` fun
 
 ## Output
 
-- Results are saved in [`output.json`](/OUTPUT/output.json) and [`output.csv`](/OUTPUT/output.csv) in the [`OUTPUT`](/OUTPUT) folder
+- Results are saved in [`jobs.json`](/output/jobs.json) and [`jobs.csv`](/output/jobs.csv) in the [`output`](/output) folder
+
+## Summary Report
+
+When the run ends, we print a small summary repport that inludes:
+- Total number of request that were made.
+- Total number of requests successfully finished.
+- Total number of failed requests.
+
+We also print some statistics:
+- Top 10 companies with the most job offers.
+- Top 10 locations.
 

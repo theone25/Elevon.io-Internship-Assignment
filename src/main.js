@@ -46,7 +46,8 @@ await crawler.run(startUrls);
 
 const stats = await crawler.stats;
 const calculatedStats = stats.calculate();
-console.log('Crawler finished with stats:', {
+console.log('Crawler finished with stats:')
+console.table({
     requestsTotal: calculatedStats.requestsTotal,
     requestsFinished: stats.state.requestsFinished,
     requestsFailed: stats.state.requestsFailed,
@@ -58,8 +59,8 @@ summaryReport(data.items);
 
 
 // using crawlee puppeteer docs
-await crawler.exportData("output/output.json","json");
-await crawler.exportData("output/output.csv","csv");
+await crawler.exportData("output/jobs.json","json");
+await crawler.exportData("output/jobs.csv","csv");
 
 
 
