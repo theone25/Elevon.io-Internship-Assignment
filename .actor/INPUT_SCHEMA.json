@@ -1,0 +1,44 @@
+{
+    "title": "PuppeteerCrawler Template",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "startUrls": {
+            "title": "Start URLs",
+            "type": "array",
+            "description": "URLs to start with.",
+            "editor": "requestListSources",
+            "prefill": [{
+                "url": "https://www.profesia.sk/praca/"
+            }]
+        },
+        "maxCrawlPages": {
+            "title": "Max pages",
+            "type": "integer",
+            "description": "The maximum number pages to crawl. Use 0 for unlimited.",
+            "minimum": 0,
+            "default": 0
+        },
+        "maxRequestsPerCrawl": {
+            "title": "Max number of requests per crawl",
+            "type": "integer",
+            "description": "Limit how many pages the crawler will visit",
+            "minimum": 1,
+            "default": 100
+        },
+        "maxConcurrency": {
+            "title": "Max concurrency",
+            "type": "integer",
+            "description": "Maximum number of concurrent pages the crawler will load.",
+            "maximum": 15,
+            "default": 10
+        },
+        "minConcurrency": {
+            "title": "Min concurrency",
+            "type": "integer",
+            "description": "Minimum number of concurrent pages the crawler will load.",
+            "minimum": 1,
+            "default": 1
+        }
+    }
+}

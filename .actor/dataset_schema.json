@@ -1,0 +1,74 @@
+{
+    "actorSpecification": 1,
+    "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+            "jobTitle": {
+                "type": "string"
+            },
+            "companyName": {
+                "type": "string"
+            },
+            "location": {
+                "type": "string"
+            },
+            "salary": {
+                "type": ["string", "number", "array"],
+                "items": {
+                    "type": "object",
+                        "properties": {
+                            "minSalary": {
+                                "type": "string",
+                                "nullable": true
+                            },
+                            "maxSalary": {
+                                "type": "string",
+                                "nullable": true
+                            },
+                            "currency": {
+                                "type": "string",
+                                "nullable": true
+                            },
+                            "period": {
+                                "type": "string",
+                                "nullable": true
+                            }
+                        }
+                }
+            },
+            // in some cases, employmentType is not defined
+            "employmentType": {
+                "type": "string",
+                "nullable": true
+            },
+            "seniority": {
+                "type": "string",
+                "nullable": true
+            },
+            "tags_skills": {
+                "type": "string",
+                "nullable": true
+            },
+            "postedAt": {
+                "type": "string"
+            },
+            "jobId": {
+                "type": "string"
+            },
+            "jobUrl": {
+                "type": "string"
+            },
+            "companyUrl": {
+                "type": "string"
+            },
+            "description": {
+                "type": "string"
+            }
+        },
+        "required": ["jobTitle","companyName", "location", "salary", "employmentType", "seniority", "tags_skills", "postedAt", "jobId", "jobUrl", "companyUrl", "description"]
+    },
+    "views": {}
+}
+
+

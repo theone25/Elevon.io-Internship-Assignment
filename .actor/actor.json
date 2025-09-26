@@ -1,0 +1,15 @@
+{
+	"actorSpecification": 1,
+	"name": "crawler-example",
+	"title": "Elevon.io Internship Assignment",
+	"description": "Elevon.io Internship Assignment.",
+	"version": "0.0",
+	"meta": {
+		"templateId": "js-crawlee-puppeteer-chrome"
+	},
+	"input": "./INPUT_SCHEMA.json",
+    "storages": {
+        "dataset": "./dataset_schema.json"
+    },
+    "dockerfile": "../Dockerfile"
+}
