@@ -178,8 +178,8 @@ router.addHandler('JOB', async ({ page, request, log }) => {
                 tags_skills;
             seniority = checkSeniorityLevel(seniority,jobTitle);
 
-            data = { jobTitle, companyName, location, salary, employmentType, seniority, tags_skills, postedAt, jobId, jobUrl, companyUrl, description}
-            return { success: true, data };
+            let jobDetails = { jobTitle, companyName, location, salary, employmentType, seniority, tags_skills, postedAt, jobId, jobUrl, companyUrl, description}
+            return { success: true, jobDetails };
         } catch (error) {
             return { success: false, error: `Exception occurred while extracting data: ${error.message}` }
         }
@@ -189,17 +189,17 @@ router.addHandler('JOB', async ({ page, request, log }) => {
 
 
     // Push into dataset
-    if (result.success) {
-        if (seenJobs.has(result.data.jobId)) {
-            log.warning(`Duplicate job found: ${result.data.jobId}, skipping...`);
+    if (data.success) {
+        if (seenJobs.has(data.jobDetails.jobId)) {
+            log.warning(`Duplicate job found: ${data.jobDetails.jobId}, skipping...`);
             return;
         } else {
-            seenJobs.add(result.data.jobId);
-            await Dataset.pushData(result.data);
+            seenJobs.add(data.jobDetails.jobId);
+            await Dataset.pushData(data.jobDetails);
         }
 
     } else  {
-        log.error(`Error extracting data: ${result.error}`);
+        log.error(`Error extracting data: ${data.error}`);
     }
 
 
